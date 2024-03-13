@@ -3,13 +3,20 @@ const app = express();
 const cors = require('cors');
 const pool = require('./db');
 
-// Middleware - Get access to request.body object for client side data
+// Middleware - Get access to req.body object for client side data
 app.use(cors());
 app.use(express.json());
 
-// SET ROUTES
+// SET ROUTES - Testing in Postman
 
 // Create a to-do
+app.post('/todos', async (req, res) => {
+  try {
+    console.log(req.body);
+  } catch (err) {
+    console.error(err.message);
+  }
+});
 
 // Get all to-dos
 
