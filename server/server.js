@@ -64,13 +64,26 @@ app.put('/todos/:id', async (req, res) => {
       [description, id]
     );
 
-    res.json('To-Do was updated.');
+    res.json('To-Do item was updated.');
   } catch (err) {
     console.error(err.message);
   }
 });
 
 // Delete a to-do
+app.delete('/todos/:id', async (req, res) => {
+  try {
+    const { id } = req.params;
+
+    const deleteToDo = await pool.query('DELETE FROM todo WHERE todo_id = $1', [
+      id,
+    ]);
+
+    res.json('To-Do item was deleted.');
+  } catch (err) {
+    console.error(err.message);
+  }
+});
 
 // Set Port
 app.listen(5000, () => {
