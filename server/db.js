@@ -1,6 +1,7 @@
 // Hide local password
 require('dotenv').config();
 
+// Change to your own local password - hidden with env var
 const local_pw = process.env.PSQL_PASSWORD;
 
 // postgres connection with pg NPM package
