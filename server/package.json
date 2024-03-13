@@ -1,0 +1,19 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "A to do list application in the PERN stack for practicing SQL/working with Postgres.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dylanawhite92/pern-todo.git"
+  },
+  "author": "Dylan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dylanawhite92/pern-todo/issues"
+  },
+  "homepage": "https://github.com/dylanawhite92/pern-todo#readme"
+}
