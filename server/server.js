@@ -37,7 +37,20 @@ app.get('/todos', async (req, res) => {
   }
 });
 
-// Get a to-do
+// Get a specific to-do
+app.get('/todos/:id', async (req, res) => {
+  try {
+    const { id } = req.params;
+
+    const toDo = await pool.query('SELECT * FROM todo WHERE todo_id = $1', [
+      id,
+    ]);
+
+    res.json(toDo.rows[0]);
+  } catch (err) {
+    console.error(err.message);
+  }
+});
 
 // Update a to-do
 
