@@ -27,6 +27,15 @@ app.post('/todos', async (req, res) => {
 });
 
 // Get all to-dos
+app.get('/todos', async (req, res) => {
+  try {
+    const allToDos = await pool.query('SELECT * FROM todo');
+
+    res.json(allToDos.rows);
+  } catch (err) {
+    console.error(err.message);
+  }
+});
 
 // Get a to-do
 
