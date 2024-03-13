@@ -12,7 +12,15 @@ app.use(express.json());
 // Create a to-do
 app.post('/todos', async (req, res) => {
   try {
-    console.log(req.body);
+    const { description } = req.body;
+
+    // Use placeholder value to insert description given
+    const newToDo = await pool.query(
+      'INSERT INTO todo (description) VALUES($1)',
+      [description]
+    );
+
+    res.json(newToDo);
   } catch (err) {
     console.error(err.message);
   }
