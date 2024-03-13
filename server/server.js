@@ -16,11 +16,11 @@ app.post('/todos', async (req, res) => {
 
     // Use placeholder value to insert description given
     const newToDo = await pool.query(
-      'INSERT INTO todo (description) VALUES($1)',
+      'INSERT INTO todo (description) VALUES($1) RETURNING *',
       [description]
     );
 
-    res.json(newToDo);
+    res.json(newToDo.rows[0]);
   } catch (err) {
     console.error(err.message);
   }
