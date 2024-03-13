@@ -8,6 +8,7 @@ app.use(cors());
 app.use(express.json());
 
 // SET ROUTES - Testing in Postman
+// Destructuring used here for easier access to object values via local variables
 
 // Create a to-do
 app.post('/todos', async (req, res) => {
@@ -53,6 +54,21 @@ app.get('/todos/:id', async (req, res) => {
 });
 
 // Update a to-do
+app.put('/todos/:id', async (req, res) => {
+  try {
+    const { id } = req.params;
+    const { description } = req.body;
+
+    const updateToDo = await pool.query(
+      'UPDATE todo SET description = $1 WHERE todo_id = $2',
+      [description, id]
+    );
+
+    res.json('To-Do was updated.');
+  } catch (err) {
+    console.error(err.message);
+  }
+});
 
 // Delete a to-do
 
