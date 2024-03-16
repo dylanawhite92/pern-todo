@@ -1,8 +1,8 @@
-import { Fragment } from 'react';
 import './App.css';
 
 function App() {
-  return <Fragment></Fragment>;
+  // Imported fragment at first, read that empty tags now work
+  return <></>;
 }
 
 export default App;
