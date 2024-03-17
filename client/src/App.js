@@ -1,8 +1,17 @@
 import './App.css';
 
+// Components
+
+import { InputToDo } from './components/index';
+
 function App() {
-  // Imported fragment at first, read that empty tags now work
-  return <></>;
+  return (
+    <>
+      <div className='container'>
+        <InputToDo />
+      </div>
+    </>
+  );
 }
 
 export default App;
