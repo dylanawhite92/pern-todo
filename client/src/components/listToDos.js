@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import EditToDo from './EditToDo';
 
 const ListToDos = () => {
   // Initialize and manage state
@@ -48,7 +49,7 @@ const ListToDos = () => {
             <tr key={todo.todo_id}>
               <td>{todo.description}</td>
               <td>
-                <button className='btn btn-warning'>Edit</button>
+                <EditToDo />
               </td>
               <td>
                 <button
