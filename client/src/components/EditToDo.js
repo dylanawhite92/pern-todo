@@ -10,12 +10,12 @@ const EditToDo = ({ todo }) => {
         type='button'
         class='btn btn-warning'
         data-bs-toggle='modal'
-        data-bs-target='#exampleModal'>
+        data-bs-target={`#id${todo.todo_id}`}>
         Edit
       </button>
       <div
         class='modal fade'
-        id='exampleModal'
+        id={`id${todo.todo_id}`}
         tabindex='-1'
         aria-labelledby='exampleModalLabel'
         aria-hidden='true'>
