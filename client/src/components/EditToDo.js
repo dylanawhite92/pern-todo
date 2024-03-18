@@ -38,6 +38,7 @@ const EditToDo = ({ todo }) => {
                 type='text'
                 className='form-control'
                 value={description}
+                onChange={(e) => setDescription(e.target.value)}
               />
             </div>
             <div class='modal-footer'>
