@@ -1,4 +1,9 @@
-const EditToDo = () => {
+import { useState } from 'react';
+
+// Pass to do prop from to do item
+const EditToDo = ({ todo }) => {
+  const [description, setDescription] = useState(todo.description);
+
   return (
     <>
       <button
@@ -32,6 +37,7 @@ const EditToDo = () => {
               <input
                 type='text'
                 className='form-control'
+                value={description}
               />
             </div>
             <div class='modal-footer'>
