@@ -4,6 +4,15 @@ import { useState } from 'react';
 const EditToDo = ({ todo }) => {
   const [description, setDescription] = useState(todo.description);
 
+  // Update Item Description
+  const updateDescription = async () => {
+    try {
+      console.log('Update form');
+    } catch (err) {
+      console.error(err.message);
+    }
+  };
+
   return (
     <>
       <button
@@ -44,7 +53,8 @@ const EditToDo = ({ todo }) => {
             <div class='modal-footer'>
               <button
                 type='button'
-                class='btn btn-warning'>
+                class='btn btn-warning'
+                onClick={(e) => updateDescription(e)}>
                 Save Changes
               </button>
               <button
