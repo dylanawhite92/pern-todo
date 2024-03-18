@@ -19,6 +19,19 @@ const ListToDos = () => {
   useEffect(() => {
     getToDos();
   }, []);
+
+  const deleteToDo = async (id) => {
+    try {
+      const deleteRequest = await fetch(`http://localhost:5000/todos/${id}`, {
+        method: 'DELETE',
+      });
+
+      console.log(deleteRequest);
+    } catch (err) {
+      console.error(err.message);
+    }
+  };
+
   return (
     <>
       <table className='table mt-5 text-center'>
@@ -37,7 +50,11 @@ const ListToDos = () => {
                 <button className='btn btn-warning'>Edit</button>
               </td>
               <td>
-                <button className='btn btn-danger'>Delete</button>
+                <button
+                  className='btn btn-danger'
+                  onClick={() => deleteToDo(todo.todo_id)}>
+                  Delete
+                </button>
               </td>
             </tr>
           ))}
