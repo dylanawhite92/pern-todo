@@ -1,13 +1,16 @@
 import { useEffect, useState } from 'react';
 
 const ListToDos = () => {
+  // Initialize and manage state
+  const [toDos, setToDos] = useState([]);
+
   // Make fetch request every time component is rendered
   const getToDos = async () => {
     try {
       const response = await fetch('http://localhost:5000/todos');
       const jsonData = await response.json();
 
-      console.log(jsonData);
+      setToDos(jsonData);
     } catch (err) {
       console.error(err.message);
     }
@@ -15,11 +18,13 @@ const ListToDos = () => {
 
   useEffect(() => {
     getToDos();
-  });
+  }, []);
+
+  console.log(toDos);
 
   return (
     <>
-      <table class='table mt-5 text-center'>
+      <table className='table mt-5 text-center'>
         <thead>
           <tr>
             <th scope='col'>Description</th>
