@@ -4,10 +4,7 @@ const InputToDo = () => {
   const [description, setDescription] = useState('');
 
   const onSubmitForm = async (e) => {
-    // Just reloading page on submit for now so table updates.
-    // Can come back later and do conditional rendering.
-    // e.preventDefault();
-
+    e.preventDefault();
     try {
       const body = { description };
       const response = await fetch('http://localhost:5000/todos', {
@@ -17,6 +14,9 @@ const InputToDo = () => {
         },
         body: JSON.stringify(body),
       });
+
+      // Reload page to show update
+      window.location = '/';
     } catch (err) {
       console.error(err.message);
     }
