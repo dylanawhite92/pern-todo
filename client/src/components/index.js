@@ -1,6 +1,6 @@
 // Reduce import to single line
 import InputToDo from './inputToDo';
 // import EditToDo from './EditToDo';
-// import listToDos from './listToDos';
+import ListToDos from './listToDos';
 
-export { InputToDo };
+export { InputToDo, ListToDos };
