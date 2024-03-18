@@ -20,6 +20,7 @@ const ListToDos = () => {
     getToDos();
   }, []);
 
+  // Delete button send req to db and remove from table
   const deleteToDo = async (id) => {
     try {
       const deleteRequest = await fetch(`http://localhost:5000/todos/${id}`, {

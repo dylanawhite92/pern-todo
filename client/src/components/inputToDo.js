@@ -4,7 +4,9 @@ const InputToDo = () => {
   const [description, setDescription] = useState('');
 
   const onSubmitForm = async (e) => {
-    e.preventDefault();
+    // Just reloading page on submit for now so table updates.
+    // Can come back later and do conditional rendering.
+    // e.preventDefault();
 
     try {
       const body = { description };
@@ -15,8 +17,6 @@ const InputToDo = () => {
         },
         body: JSON.stringify(body),
       });
-
-      //   window.location('/');
     } catch (err) {
       console.error(err.message);
     }
