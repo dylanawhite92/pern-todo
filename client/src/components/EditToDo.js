@@ -40,7 +40,8 @@ const EditToDo = ({ todo }) => {
         id={`id${todo.todo_id}`}
         tabIndex='-1'
         aria-labelledby='exampleModalLabel'
-        aria-hidden='true'>
+        aria-hidden='true'
+        onClick={() => setDescription(todo.description)}>
         <div className='modal-dialog'>
           <div className='modal-content'>
             <div className='modal-header'>
