@@ -20,7 +20,7 @@ const EditToDo = () => {
               <h1
                 class='modal-title fs-5'
                 id='exampleModalLabel'>
-                Modal title
+                Edit To-Do Item
               </h1>
               <button
                 type='button'
@@ -28,18 +28,23 @@ const EditToDo = () => {
                 data-bs-dismiss='modal'
                 aria-label='Close'></button>
             </div>
-            <div class='modal-body'>...</div>
+            <div class='modal-body'>
+              <input
+                type='text'
+                className='form-control'
+              />
+            </div>
             <div class='modal-footer'>
+              <button
+                type='button'
+                class='btn btn-warning'>
+                Save Changes
+              </button>
               <button
                 type='button'
                 class='btn btn-secondary'
                 data-bs-dismiss='modal'>
                 Close
-              </button>
-              <button
-                type='button'
-                class='btn btn-primary'>
-                Save changes
               </button>
             </div>
           </div>
