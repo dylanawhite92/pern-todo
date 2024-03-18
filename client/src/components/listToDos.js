@@ -26,7 +26,7 @@ const ListToDos = () => {
         method: 'DELETE',
       });
 
-      console.log(deleteRequest);
+      setToDos(toDos.filter((todo) => todo.todo_id !== id));
     } catch (err) {
       console.error(err.message);
     }
