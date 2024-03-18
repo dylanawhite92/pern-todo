@@ -19,9 +19,6 @@ const ListToDos = () => {
   useEffect(() => {
     getToDos();
   }, []);
-
-  console.log(toDos);
-
   return (
     <>
       <table className='table mt-5 text-center'>
@@ -33,13 +30,17 @@ const ListToDos = () => {
           </tr>
         </thead>
         <tbody>
-          {/* Keeping for reference */}
-          {/* <tr>
-            <th scope='row'>1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-          </tr> */}
+          {toDos.map((todo) => (
+            <tr key={todo.todo_id}>
+              <td>{todo.description}</td>
+              <td>
+                <button className='btn btn-warning'>Edit</button>
+              </td>
+              <td>
+                <button className='btn btn-danger'>Delete</button>
+              </td>
+            </tr>
+          ))}
         </tbody>
       </table>
     </>
